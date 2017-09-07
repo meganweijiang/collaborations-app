@@ -1,0 +1,884 @@
+Started GET "/" for 127.0.0.1 at 2017-09-07 16:51:06 -0500
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/meganweijiang/.rvm/gems/ruby-2.4.0/gems/railties-5.1.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/meganweijiang/.rvm/gems/ruby-2.4.0/gems/railties-5.1.3/lib/rails/templates/rails/welcome/index.html.erb (3.2ms)
+Completed 200 OK in 116ms (Views: 6.9ms)
+
+
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20170907215411)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "first_name" varchar, "last_name" varchar, "email" varchar, "password_digest" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170907215411"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreatePosts (20170907215419)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "posts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "image" varchar, "description" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170907215419"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2017-09-07 22:13:03.518508"], ["updated_at", "2017-09-07 22:13:03.518508"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2017-09-07 17:13:19 -0500
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered home/index.html.erb within layouts/application (2.5ms)
+Completed 500 Internal Server Error in 956ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `current_user' for #<#<Class:0x007fb7b8607d78>:0x007fb7b71c0388>
+Did you mean?  current_page?):
+    14:     <div class="container">
+    15: 
+    16:       <div class="nav">
+    17:         <% if current_user %>
+    18:           <ul>
+    19:             <li><%= current_user.email %></li>
+    20:             <li><%= link_to "Log out", logout_path, method: "delete" %></li>
+  
+app/views/layouts/application.html.erb:17:in `_app_views_layouts_application_html_erb___824195074761002378_70213510778540'
+Started GET "/" for 127.0.0.1 at 2017-09-07 17:14:57 -0500
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered home/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 30ms (Views: 21.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2017-09-07 17:14:59 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (13.4ms)
+Completed 200 OK in 43ms (Views: 40.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for 127.0.0.1 at 2017-09-07 17:15:01 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 39ms (Views: 22.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2017-09-07 17:15:05 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 39ms (Views: 36.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for 127.0.0.1 at 2017-09-07 17:15:37 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 41ms (Views: 36.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2017-09-07 17:15:49 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Kv8OMDK8vAMxk7B2sP8dCycazso1GCQ/b9eFsQbM45y/MNMFS59zys1yHPFPvIjAmJ62nIFyPuiW/dB3Pijv9w==", "user"=>{"first_name"=>"Megan", "last_name"=>"Weijiang", "email"=>"meganweijiang@yahoo.com", "password"=>"[FILTERED]"}, "commit"=>"Sign up"}
+Unpermitted parameters: :first_name, :last_name
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'password' for User.):
+  
+app/controllers/users_controller.rb:7:in `create'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2017-09-07 17:18:31 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered home/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 197ms (Views: 184.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/signup" for 127.0.0.1 at 2017-09-07 17:18:33 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 57ms (Views: 21.1ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2017-09-07 17:18:41 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/0vOe8CyJdFFLfc/KmAH1evtnO80SlvmzF7T5hoxGw1qhBNOuZHqGLnMW7jVI5IeVGnkuYAgQTE1dIYgItUXZg==", "user"=>{"first_name"=>"Megan", "last_name"=>"Weijiang", "email"=>"meganweijiang@yahoo.com", "password"=>"[FILTERED]"}, "commit"=>"Sign up"}
+Unpermitted parameters: :first_name, :last_name
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'password' for User.):
+  
+app/controllers/users_controller.rb:7:in `create'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2017-09-07 17:20:19 -0500
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered home/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 210ms (Views: 197.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/signup" for 127.0.0.1 at 2017-09-07 17:20:20 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 63ms (Views: 19.9ms | ActiveRecord: 1.8ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2017-09-07 17:20:27 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"duXPGS3oqGRIYyUjnDpDohNzo8U8LPRBk+JoUJ73lfPjKhIsVMtnrbSCiaRjedZprPfbk4hG7pZqyD2WphOZmA==", "user"=>{"first_name"=>"Megan", "last_name"=>"Weijiang", "email"=>"meganweijiang@yahoo.com", "password"=>"[FILTERED]"}, "commit"=>"Sign up"}
+Unpermitted parameters: :first_name, :last_name
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'password' for User.):
+  
+app/controllers/users_controller.rb:7:in `create'
+Started GET "/" for 127.0.0.1 at 2017-09-07 17:25:42 -0500
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered home/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 25ms (Views: 21.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-09-07 17:26:01 -0500
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered home/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 20ms (Views: 17.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/signup" for 127.0.0.1 at 2017-09-07 17:26:03 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 59ms (Views: 40.5ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2017-09-07 17:26:14 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"EaiOPOXU4Bt23GTaT20WnwP88TwunbM+cZsYtOFmrzGEZ1MJnPcv0oo9yF2wLoNUvHiJapr3qemIsU1y2YKjWg==", "user"=>{"first_name"=>"asdasd", "last_name"=>"sadsad", "email"=>"asdasda@a.com", "password"=>"[FILTERED]"}, "commit"=>"Sign up"}
+Unpermitted parameters: :first_name, :last_name, :password
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "users" ("email", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["email", "asdasda@a.com"], ["created_at", "2017-09-07 22:26:14.542187"], ["updated_at", "2017-09-07 22:26:14.542187"]]
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 7ms (ActiveRecord: 2.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-09-07 17:26:14 -0500
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered home/index.html.erb within layouts/application (1.4ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 44ms (Views: 40.6ms | ActiveRecord: 0.7ms)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2017-09-07 17:26:21 -0500
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"Dcgj8HxYYqsNddAGjVH7iNaKAJck9oLpHv3GFDbWxdX6K8224Shnob58OmJWK94qUrm7xCEIX/XpvTqgSaz2DA=="}
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-09-07 17:26:21 -0500
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered home/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 23ms (Views: 20.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/signup" for 127.0.0.1 at 2017-09-07 17:27:08 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 27ms (Views: 16.1ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2017-09-07 17:27:23 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"snmga9cUa1R1O6Is7XTsDz4KEEaH04NYBkF83f3WUH0ntn1erjeknYnaDqsSN3nEgY5oEDO5mY//aykbxTJcFg==", "user"=>{"first_name"=>"Megan", "last_name"=>"Weijiang", "email"=>"meganweijiang@yahoo.com", "password"=>"[FILTERED]"}, "commit"=>"Sign up"}
+Unpermitted parameters: :first_name, :last_name, :password
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "users" ("email", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["email", "meganweijiang@yahoo.com"], ["created_at", "2017-09-07 22:27:23.348070"], ["updated_at", "2017-09-07 22:27:23.348070"]]
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 6ms (ActiveRecord: 2.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-09-07 17:27:23 -0500
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered home/index.html.erb within layouts/application (1.8ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 28ms (Views: 22.4ms | ActiveRecord: 0.6ms)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2017-09-07 17:27:25 -0500
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"jG174W0fqd9EHLc6R4bedsrvDqcQDO4iqr7JDEYYzal7jpWn8G+s1fcVXV6c/PvUTty19BXyMz5d/jW4OWL+cA=="}
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-09-07 17:27:25 -0500
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered home/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 19ms (Views: 17.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2017-09-07 17:27:26 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 35ms (Views: 30.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2017-09-07 17:27:34 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"IaBKB5q59J6RNhD/fA7kOrDGA8/lIST0wPVvMmBHCcluW8eb8OUb4bIvft8YuXnO4qDoAejlAcJD33KTfFyryQ==", "session"=>{"email"=>"meganweijiang@yahoo.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "meganweijiang@yahoo.com"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.4ms)
+
+
+  
+NoMethodError (undefined method `authenticate' for #<User:0x007fe4d3429c70>):
+  
+app/controllers/sessions_controller.rb:8:in `create'
+Started GET "/" for 127.0.0.1 at 2017-09-07 17:28:04 -0500
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered home/index.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 31ms (Views: 25.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2017-09-07 17:28:06 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 38ms (Views: 36.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2017-09-07 17:28:10 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9utmdFwVOdokfXAxWO96v6wteu0Qp01/Bb+/ryFdCFi5EOvoNknWpQdkHhE8WOdL/kuRIx1jaEmGlaIOPUaqWA==", "session"=>{"email"=>"meganweijiang@yahoo.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "meganweijiang@yahoo.com"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 1.1ms)
+
+
+  
+NoMethodError (undefined method `authenticate' for #<User:0x007fe4d609d4c8>):
+  
+app/controllers/sessions_controller.rb:8:in `create'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2017-09-07 17:32:45 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered home/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 206ms (Views: 194.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2017-09-07 17:32:46 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (23.9ms)
+Completed 200 OK in 49ms (Views: 44.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2017-09-07 17:32:53 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"qN9BAcaG7aQnVlS580WL4aznJAfseqcrio/yAGJpNJ7nJMydrNoC2wRPOpmX8hYV/oHPyeG+gh0Jpe+hfnKWng==", "session"=>{"email"=>"meganweijiang@yahoo.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "meganweijiang@yahoo.com"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 1.1ms)
+
+
+  
+BCrypt::Errors::InvalidHash (invalid hash):
+  
+app/controllers/sessions_controller.rb:8:in `create'
+Started GET "/" for 127.0.0.1 at 2017-09-07 17:33:20 -0500
+Started POST "/login" for 127.0.0.1 at 2017-09-07 17:33:30 -0500
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered home/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 21ms (Views: 17.3ms | ActiveRecord: 0.6ms)
+
+
+Processing by SessionsController#create as HTML
+Started POST "/login" for 127.0.0.1 at 2017-09-07 17:33:30 -0500
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"qN9BAcaG7aQnVlS580WL4aznJAfseqcrio/yAGJpNJ7nJMydrNoC2wRPOpmX8hYV/oHPyeG+gh0Jpe+hfnKWng==", "session"=>{"email"=>"meganweijiang@yahoo.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"qN9BAcaG7aQnVlS580WL4aznJAfseqcrio/yAGJpNJ7nJMydrNoC2wRPOpmX8hYV/oHPyeG+gh0Jpe+hfnKWng==", "session"=>{"email"=>"meganweijiang@yahoo.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "meganweijiang@yahoo.com"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "meganweijiang@yahoo.com"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.8ms)
+
+
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.3ms)
+
+
+  
+  
+BCrypt::Errors::InvalidHash (invalid hash):
+BCrypt::Errors::InvalidHash (invalid hash):
+  
+  
+app/controllers/sessions_controller.rb:8:in `create'
+app/controllers/sessions_controller.rb:8:in `create'
+Started GET "/" for 127.0.0.1 at 2017-09-07 17:33:34 -0500
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered home/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 24ms (Views: 20.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2017-09-07 17:33:35 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 42ms (Views: 39.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2017-09-07 17:33:40 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"B8i86b0y/CBH8YUaUy59cwBulWfSJmBD/7aIqjivgQZIMzF1124TX2To6zo3meCHUgh+qd/iRXV8nJULJLQjBg==", "session"=>{"email"=>"meganweijiang@yahoo.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "meganweijiang@yahoo.com"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.1ms)
+
+
+  
+BCrypt::Errors::InvalidHash (invalid hash):
+  
+app/controllers/sessions_controller.rb:8:in `create'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2017-09-07 17:35:02 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered home/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 204ms (Views: 190.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/signup" for 127.0.0.1 at 2017-09-07 17:35:04 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 55ms (Views: 21.4ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2017-09-07 17:35:13 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2NgvhjN+bSl0zMYucWBA6hYtKGwE60hNzSsCdyWzkQNNF/KzSl2i4IgtaqmOI9UhqalQOrCBUpo0AVexHVedaA==", "user"=>{"first_name"=>"Megan", "last_name"=>"Weijiang", "email"=>"megan.weijiang@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Sign up"}
+Unpermitted parameters: :first_name, :last_name
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "megan.weijiang@gmail.com"], ["password_digest", "$2a$10$eyrhXv7wBKfk83IWQ5iokOhpUSAfcd/YnfY7TuiMwOEDkvm253gFy"], ["created_at", "2017-09-07 22:35:13.095181"], ["updated_at", "2017-09-07 22:35:13.095181"]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 71ms (ActiveRecord: 2.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-09-07 17:35:13 -0500
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered home/index.html.erb within layouts/application (1.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 22ms (Views: 20.0ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2017-09-07 17:35:17 -0500
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"5KDAq0PyfqX6U/Y0Min3bkIPFj3UlATaUQUAIVZKePMTQy7t3oJ7r0laHFDpU9LMxjytbtFq2camRfyVKTBLKg=="}
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-09-07 17:35:17 -0500
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered home/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 19ms (Views: 16.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2017-09-07 17:35:18 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 34ms (Views: 30.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2017-09-07 17:35:26 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"IWKtTx5vyJKCrstMhEoTbjA0Js3271ko1EI/P16aF7pumSDTdDMn7aG3pWzg/Y6aYlLNA/srfB5XaCKeQoG1ug==", "session"=>{"email"=>"megan.weijiang@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "megan.weijiang@gmail.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 70ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-09-07 17:35:26 -0500
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered home/index.html.erb within layouts/application (1.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 18ms (Views: 15.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-09-07 17:45:11 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered home/index.html.erb within layouts/application (2.2ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 329ms (Views: 315.0ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/posts/new" for 127.0.0.1 at 2017-09-07 17:45:13 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/posts/new"):
+  
+actionpack (5.1.3) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.3) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.3) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.3) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2017-09-07 17:46:40 -0500
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered home/index.html.erb within layouts/application (2.2ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 33ms (Views: 29.2ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/posts/new" for 127.0.0.1 at 2017-09-07 17:46:42 -0500
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (11.3ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 47ms (Views: 32.6ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/posts" for 127.0.0.1 at 2017-09-07 17:46:47 -0500
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"sSMkyIohvr8YxvTKb0c0AwBpADNIrXqVwFsTQrZcS7Dvdm4RGzY2FCROqtuwEoqiTOrGsWtD3jGQwPau2HMUOg==", "post"=>{"image"=>"hello", "description"=>"hello"}, "commit"=>"Create"}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (2.1ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 34ms (Views: 22.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-09-07 17:48:03 -0500
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered home/index.html.erb within layouts/application (2.2ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 36ms (Views: 31.5ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/posts/new" for 127.0.0.1 at 2017-09-07 17:48:05 -0500
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (2.9ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 49ms (Views: 37.3ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/posts" for 127.0.0.1 at 2017-09-07 17:48:05 -0500
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"pgpcf3xDgGPgw04gAuA8bOZZR5mWpseU5pn3BsbU1Ev4Xxam7VQIyNxLEDHdtYLNqtqBG7VIYzC2AhLqqPuLwQ==", "post"=>{"image"=>"", "description"=>""}, "commit"=>"Create"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (3.2ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 51ms (Views: 30.1ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/posts" for 127.0.0.1 at 2017-09-07 17:48:11 -0500
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+kIoPAYrA+VHGIE9Jqo9rrW100Djgyc7PrDVQHsw2LANocZ6m1sG7/QRa1n90BgMMYZoE+Z9+ifJ8Cn0BErraQ==", "post"=>{"image"=>"hello", "description"=>"hello"}, "commit"=>"Create"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (4.7ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 32ms (Views: 29.4ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/posts" for 127.0.0.1 at 2017-09-07 17:48:12 -0500
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"sS3H+uYuvCwG8jyIPZiX5qpE15Vp0D2bTltyFwQQ8IdGzim8e165JrX71uzm4rJELndsxmwu4Ie5G46je2rDXg==", "post"=>{"image"=>"hello", "description"=>"hello"}, "commit"=>"Create"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (4.5ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 36ms (Views: 33.3ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/posts" for 127.0.0.1 at 2017-09-07 17:48:21 -0500
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"TgBvYEnUD97HAWtw+b4gyakkU+dCVuNk6gwzj4KsSBa544Em1KQK1HQIgRQixAVrLRfotEeoPngdTM87/dZ7zw==", "post"=>{"image"=>"hello", "description"=>"hello"}, "commit"=>"Create"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (1.2ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 31ms (Views: 28.1ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/posts" for 127.0.0.1 at 2017-09-07 17:48:24 -0500
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ssTciCWoJPwQm7wYZhNdjbbtVJreXL175ymiBP6eeDZFJzLOuNgh9qOSVny9aXgvMt7vyduiYGcQaV6wgeRL7w==", "post"=>{"image"=>"hello", "description"=>"hello"}, "commit"=>"Create"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (2.3ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 29ms (Views: 27.0ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/posts" for 127.0.0.1 at 2017-09-07 17:49:30 -0500
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1F6tLV31Vs34iERt5FoO2RDN3q1JXNq1aPnmBJyUG+ojvUNrwIVTx0uBrgk/ICt7lP5l/kyiB6mfuRqw4+4oMw==", "post"=>{"image"=>"hello", "description"=>"hello"}, "commit"=>"Create"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (1.7ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 33ms (Views: 30.2ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/posts" for 127.0.0.1 at 2017-09-07 17:49:36 -0500
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"JI4EO32y1OkySlBuIS9XSHW34CJHII/2BXPqcsHeuIzTbep94MLR44FDugr6VXLq8YRbcULeUuryMxbGvqSLVQ==", "post"=>{"title"=>"hello", "image"=>"hello", "description"=>"hello"}, "commit"=>"Create"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (1.6ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 55ms (Views: 50.8ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/posts" for 127.0.0.1 at 2017-09-07 17:49:36 -0500
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vj3X4FPOmgQ3vFM2+vti41YrrlqLp/ZZTBrcwIc+u11J3jmmzr6fDoS1uVIhgUdB0hgVCY5ZK0W7WiB0+ESIhA==", "post"=>{"title"=>"hello", "image"=>"hello", "description"=>"hello"}, "commit"=>"Create"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (3.1ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 34ms (Views: 30.6ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/posts" for 127.0.0.1 at 2017-09-07 17:49:37 -0500
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2kyZ3kPVDP0FtC8nL9QtTseiIyzCAU3P8oOXtOAQw/str3eY3qUJ97a9xUP0rgjsQ5GYf8f/kNMFw2sAn2rwIg==", "post"=>{"title"=>"hello", "image"=>"hello", "description"=>"hello"}, "commit"=>"Create"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (2.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 42ms (Views: 35.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-09-07 17:51:34 -0500
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered home/index.html.erb within layouts/application (2.1ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 39ms (Views: 35.5ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/posts/new" for 127.0.0.1 at 2017-09-07 17:51:35 -0500
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (1.7ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 40ms (Views: 25.7ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/posts" for 127.0.0.1 at 2017-09-07 17:51:40 -0500
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jUegzAvUuMRDj3wAuQHVd91be+3tDPEM7vN6B221zcvTEuoVmsMwb38HIhFmVGvWkdi9b87iVai+aJ/rA5qSQQ==", "post"=>{"title"=>"hello", "image"=>"hello", "description"=>"hello\r\n"}, "commit"=>"Create"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (1.2ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 32ms (Views: 26.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-09-07 17:51:55 -0500
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered home/index.html.erb within layouts/application (1.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 23ms (Views: 21.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-09-07 17:55:23 -0500
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered home/index.html.erb within layouts/application (3.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 36ms (Views: 33.2ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/posts/new" for 127.0.0.1 at 2017-09-07 17:55:24 -0500
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (2.5ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 52ms (Views: 38.2ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/posts" for 127.0.0.1 at 2017-09-07 17:55:30 -0500
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/9eBNRxxXx3fN5jKPHJ7ihfTX+fhPoopQTukShnRmVihgsvsjWbXtuO/xtvjJ8UrW1CZZcLQLo0RoEGmd/7G0g==", "post"=>{"title"=>"hello", "image"=>"hello", "description"=>"hello"}, "commit"=>"Create"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "posts" ("title", "image", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "hello"], ["image", "hello"], ["description", "hello"], ["created_at", "2017-09-07 22:55:30.511522"], ["updated_at", "2017-09-07 22:55:30.511522"]]
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000home#index
+Completed 302 Found in 10ms (ActiveRecord: 3.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-09-07 17:56:49 -0500
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered home/index.html.erb within layouts/application (10.1ms)
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.8ms)
+
+
+  
+ActionView::Template::Error (The asset "hello" is not present in the asset pipeline.):
+    4:     <% @posts.each do |post|%> 
+    5:       <div class="post">
+    6:         <h2><%= post.title %></h2> 
+    7:         <%= image_tag post.image %>
+    8:       </div> 
+    9:     <% end %>
+   10:   </div>
+  
+app/views/home/index.html.erb:7:in `block in _app_views_home_index_html_erb___330108450249063359_70222143123220'
+app/views/home/index.html.erb:4:in `_app_views_home_index_html_erb___330108450249063359_70222143123220'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2017-09-07 17:59:41 -0500
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered home/index.html.erb within layouts/application (150.0ms)
+Completed 500 Internal Server Error in 164ms (ActiveRecord: 0.7ms)
+
+
+  
+ActionView::Template::Error (The asset "hello" is not present in the asset pipeline.):
+    4:     <% @posts.each do |post|%> 
+    5:       <div class="post">
+    6:         <h2><%= post.title %></h2> 
+    7:         <%= image_tag post.image %>
+    8:       </div> 
+    9:     <% end %>
+   10:   </div>
+  
+app/views/home/index.html.erb:7:in `block in _app_views_home_index_html_erb___1348740860354089138_70267467190800'
+app/views/home/index.html.erb:4:in `_app_views_home_index_html_erb___1348740860354089138_70267467190800'
+Started GET "/" for 127.0.0.1 at 2017-09-07 17:59:43 -0500
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered home/index.html.erb within layouts/application (4.4ms)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (The asset "hello" is not present in the asset pipeline.):
+    4:     <% @posts.each do |post|%> 
+    5:       <div class="post">
+    6:         <h2><%= post.title %></h2> 
+    7:         <%= image_tag post.image %>
+    8:       </div> 
+    9:     <% end %>
+   10:   </div>
+  
+app/views/home/index.html.erb:7:in `block in _app_views_home_index_html_erb___1348740860354089138_70267505884240'
+app/views/home/index.html.erb:4:in `_app_views_home_index_html_erb___1348740860354089138_70267505884240'
+Started GET "/" for 127.0.0.1 at 2017-09-07 18:00:15 -0500
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered home/index.html.erb within layouts/application (1.3ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 79ms (Views: 75.9ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/posts/new" for 127.0.0.1 at 2017-09-07 18:00:18 -0500
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (10.8ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 39ms (Views: 35.7ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/posts" for 127.0.0.1 at 2017-09-07 18:00:23 -0500
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"kgeYydqMgh65o+KImeXFjOxvgNlCm/vggKfa9eBKaeDMUtIQS5sKtYUrvJlGsHstoOxGW2F1X0TQPD8ZjmU2ag==", "post"=>{"title"=>"yello", "description"=>"meow"}, "commit"=>"Create"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.5ms)[0m  [1m[32mINSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "yello"], ["description", "meow"], ["created_at", "2017-09-07 23:00:23.853331"], ["updated_at", "2017-09-07 23:00:23.853331"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+Completed 500 Internal Server Error in 156ms (ActiveRecord: 2.6ms)
+
+
+  
+NameError (undefined local variable or method `root' for #<PostsController:0x007fd0d8389068>):
+  
+app/controllers/posts_controller.rb:9:in `create'
+Started GET "/" for 127.0.0.1 at 2017-09-07 18:01:23 -0500
+Started POST "/posts" for 127.0.0.1 at 2017-09-07 18:01:33 -0500
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered home/index.html.erb within layouts/application (10.4ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 52ms (Views: 48.1ms | ActiveRecord: 1.5ms)
+
+
+Processing by PostsController#create as HTML
+Started POST "/posts" for 127.0.0.1 at 2017-09-07 18:01:33 -0500
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"kgeYydqMgh65o+KImeXFjOxvgNlCm/vggKfa9eBKaeDMUtIQS5sKtYUrvJlGsHstoOxGW2F1X0TQPD8ZjmU2ag==", "post"=>{"title"=>"yello", "description"=>"meow"}, "commit"=>"Create"}
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"kgeYydqMgh65o+KImeXFjOxvgNlCm/vggKfa9eBKaeDMUtIQS5sKtYUrvJlGsHstoOxGW2F1X0TQPD8ZjmU2ag==", "post"=>{"title"=>"yello", "description"=>"meow"}, "commit"=>"Create"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "yello"], ["description", "meow"], ["created_at", "2017-09-07 23:01:33.595043"], ["updated_at", "2017-09-07 23:01:33.595043"]]
+  [1m[35mSQL (5172.4ms)[0m  [1m[32mINSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "yello"], ["description", "meow"], ["created_at", "2017-09-07 23:01:33.596268"], ["updated_at", "2017-09-07 23:01:33.596268"]]
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+Redirected to http://localhost:3000/
+Completed 500 Internal Server Error in 5191ms (ActiveRecord: 5172.6ms)
+
+
+Completed 302 Found in 5192ms (ActiveRecord: 3.8ms)
+
+
+  
+ActiveRecord::StatementInvalid (SQLite3::BusyException: database is locked: INSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)):
+  
+app/controllers/posts_controller.rb:8:in `create'
+Started GET "/" for 127.0.0.1 at 2017-09-07 18:02:30 -0500
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered home/index.html.erb within layouts/application (7.4ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 240ms (Views: 228.9ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/posts/new" for 127.0.0.1 at 2017-09-07 18:02:33 -0500
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (12.6ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 41ms (Views: 36.9ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/posts" for 127.0.0.1 at 2017-09-07 18:02:36 -0500
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8OhqhVc1h9tuo0h738CYQYcMW9uKmO+k8S5mvacOQVOuvSBcxiIPcFIrFmoAlSbgy4+dWal2SwChtYNRySEe2Q==", "post"=>{"title"=>"mew", "description"=>"moop"}, "commit"=>"Create"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "mew"], ["description", "moop"], ["created_at", "2017-09-07 23:02:36.466042"], ["updated_at", "2017-09-07 23:02:36.466042"]]
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 11ms (ActiveRecord: 2.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-09-07 18:02:36 -0500
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered home/index.html.erb within layouts/application (1.3ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 24ms (Views: 21.0ms | ActiveRecord: 0.3ms)
+
+
