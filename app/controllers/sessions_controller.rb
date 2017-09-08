@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
     user = User.find_by_email(params[:session][:email])
     if user && user.authenticate(params[:session][:password])
       session[:user_id] = user.id
-      redirect_to root_url
+      redirect_to posts_url
     else
       redirect_to login_url
     end 

@@ -4,8 +4,10 @@
     <!-- Your code here -->
     <%= form_for :post, url: '/posts' do |f| %>  
       <div class="field"> 
-        <%= f.text_area :title, :placeholder => 'Title'  %><br>
-        <%= f.text_area :description, :placeholder => 'Description'  %> 
+        <%= f.text_field :title, :placeholder => 'Title'  %><br>
+        <%= f.text_field :location, :placeholder => 'Location'  %><br>
+        <%= f.text_area :description, :placeholder => 'Description'  %><br>
+        <%= f.text_area :requirements, :placeholder => 'Requirements'  %><br>
       </div> 
       <div class="actions"> 
         <%= f.submit "Create", :class => "form-btn" %> 
