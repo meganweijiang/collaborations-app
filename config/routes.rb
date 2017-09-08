@@ -13,6 +13,6 @@ Rails.application.routes.draw do
   post 'profile' => 'profiles#create'
 
   resources :users
-  resources :posts, only: [:show]
-  resources :profiles, only: [:show]
+  resources :posts
+  resources :profiles
 end

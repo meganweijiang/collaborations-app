@@ -1,0 +1,10 @@
+<div class="edit_profile">
+  <div class="container">
+    <%= form_for(@profile) do |f| %>
+	  <%= f.text_field :location, :placeholder => 'Location' %><br> 
+      <%= f.text_area :skills, :placeholder => 'Skills' %><br>
+      <%= f.text_area :bio, :placeholder => 'Bio' %><br> 
+      <%= f.submit "Update", :class => "form-btn" %>
+    <% end %>
+  </div>
+</div>

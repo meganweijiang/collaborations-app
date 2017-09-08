@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
 
-  before_action :require_user, only: [:show, :home]
+  before_action :require_user, only: [:show, :home, :new, :create]
 
   def home
     @posts = Post.all
@@ -15,10 +15,8 @@ class PostsController < ApplicationController
   end
   
   def create 
-    @post = Post.new(post_params) 
-    @post.author = current_user.email
-    @post.first_name = current_user.first_name
-    @post.last_name = current_user.last_name
+    @post = Post.new(post_params)
+    @post.user_id = current_user.id 
     if @post.save 
       redirect_to posts_path
     else 

@@ -7,12 +7,27 @@ class ProfilesController < ApplicationController
     end
   end
 
+  def update
+    @profile = Profile.find_by(user_id: current_user.id)
+    @profile.update(profile_params)
+    if @profile.save
+      redirect_to root_path
+    else
+      render 'edit'
+    end
+  end
+
+  def edit
+    @profile = Profile.find_by(user_id: current_user.id)
+  end
+
   def new
    	@profile = Profile.new
   end 
 
   def create
     @profile = Profile.new(profile_params)
+    @profile.user_id = current_user.id
     if @profile.save
       redirect_to profile_path
     else
@@ -22,6 +37,6 @@ class ProfilesController < ApplicationController
 
   private 
     def profile_params
-      params.require(:profile).permit(:first_name, :last_name, :location, :skills, :bio)
+      params.require(:profile).permit(:location, :skills, :bio)
     end 
 end

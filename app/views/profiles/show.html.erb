@@ -1,1 +1,6 @@
-<%= @profile.first_name %>
+<%= @profile.user.first_name %> <%= @profile.user.last_name %><br>
+<%= @profile.user.email %><br>
+<%= @profile.location %><br>
+<%= @profile.skills %><br>
+<%= @profile.bio %>
+<%= link_to "Edit Profile", edit_profile_path(@profile) %>
