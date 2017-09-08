@@ -1,9 +1,13 @@
 class PostsController < ApplicationController
 
-  before_action :require_user, only: [:show]
+  before_action :require_user, only: [:show, :home]
+
+  def home
+    @posts = Post.all
+  end
 
   def show
-    @posts = Post.all
+    @post = Post.find(params[:id])
   end
 
   def new 

@@ -7,8 +7,7 @@ Rails.application.routes.draw do
   delete 'logout' => 'sessions#destroy'
   get 'posts/new' => 'posts#new'
   post 'posts' => 'posts#create'
-  get 'posts' => 'posts#show'
-  get 'postid' => 'post#show'
+  get 'posts' => 'posts#home'
 
   resources :users
   resources :posts, only: [:show]
