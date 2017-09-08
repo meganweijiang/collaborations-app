@@ -8,7 +8,11 @@ Rails.application.routes.draw do
   get 'posts/new' => 'posts#new'
   post 'posts' => 'posts#create'
   get 'posts' => 'posts#home'
+  get 'profile' => 'profiles#show'
+  get 'profile/new' => 'profiles#new'
+  post 'profile' => 'profiles#create'
 
   resources :users
   resources :posts, only: [:show]
+  resources :profiles, only: [:show]
 end
