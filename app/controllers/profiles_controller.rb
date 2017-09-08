@@ -9,9 +9,8 @@ class ProfilesController < ApplicationController
 
   def update
     @profile = Profile.find_by(user_id: current_user.id)
-    @profile.update(profile_params)
-    if @profile.save
-      redirect_to root_path
+    if @profile.update(profile_params)
+      redirect_to profile_path
     else
       render 'edit'
     end

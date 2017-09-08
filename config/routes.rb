@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   get 'profile' => 'profiles#show'
   get 'profile/new' => 'profiles#new'
   post 'profile' => 'profiles#create'
+  patch 'profile' => 'profiles#update'
 
   resources :users
   resources :posts
