@@ -6,6 +6,7 @@ class CreatePosts < ActiveRecord::Migration[5.1]
       t.string :description
       t.string :requirements
       t.string :location
+      t.string :category
       t.timestamps
     end
   end

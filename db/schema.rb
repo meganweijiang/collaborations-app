@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 20170911211627) do
     t.string "description"
     t.string "requirements"
     t.string "location"
+    t.string "category"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_posts_on_user_id"

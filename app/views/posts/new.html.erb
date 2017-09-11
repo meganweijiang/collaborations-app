@@ -1,13 +1,13 @@
 <div class="create">
   <div class="container">
     
-    <!-- Your code here -->
     <%= form_for :post, url: '/posts' do |f| %>  
       <div class="field"> 
         <%= f.text_field :title, :placeholder => 'Title'  %><br>
         <%= f.text_field :location, :placeholder => 'Location'  %><br>
         <%= f.text_area :description, :placeholder => 'Description'  %><br>
         <%= f.text_area :requirements, :placeholder => 'Requirements'  %><br>
+        <p>Category</p><%= f.select :category, [['Music', 'Music'], ['Art', 'Art'], ['Tech', 'Tech'], ['Education', 'Education'], ['Business', 'Business'], ['Services', 'Services'], ['Beauty/Fashion', 'Beauty/Fashion'], ['Other', 'Other']], :include_blank => true %>
       </div> 
       <div class="actions"> 
         <%= f.submit "Create", :class => "form-btn" %> 
