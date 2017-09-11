@@ -1,0 +1,15 @@
+<div class="edit-post">
+  <div class="container">
+    <%= form_for @post do |f| %>
+      <div class="field"> 
+        <p>Title</p><%= f.text_field :title, :placeholder => 'Title'  %><br>
+        <p>Location</p><%= f.text_field :location, :placeholder => 'Location'  %><br>
+        <p>Description</p><%= f.text_area :description, :placeholder => 'Description'  %><br>
+        <p>Requirements</p><%= f.text_area :requirements, :placeholder => 'Requirements'  %><br>
+      </div> 
+      <div class="actions"> 
+        <%= f.submit "Update", :class => "form-btn" %> 
+      </div> 
+    <% end %>
+  </div>
+</div>

@@ -1,5 +1,6 @@
 <div class="new_profile">
   <div class="container">
+  	<p>Looks like you don't have a profile! Please fill one out to get started.</p>
     <%= form_for :profile, url: '/profile' do |f| %>
       <%= f.text_field :location, :placeholder => 'Location' %><br> 
       <%= f.text_area :skills, :placeholder => 'Skills' %><br>

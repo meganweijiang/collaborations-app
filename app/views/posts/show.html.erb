@@ -1,5 +1,14 @@
 <h2><%= @post.title %></h2> 
 <h3>By <%= @post.user.first_name %> <%= @post.user.last_name %></h3>
-<%= @post.location %><br>
-<%= @post.description %><br>
-<%= @post.requirements %><br>
+<p>Location: </p><%= @post.location %><br>
+<p>Description: </p><%= @post.description %><br>
+<p>Looking for: </p><%= @post.requirements %><br>
+
+<% if current_user.id == @post.user.id %> 
+  <p class="post-edit"> 
+    <%= link_to "Edit Post", edit_post_path(@post.id) %> 
+  </p> 
+  <p class="post-delete"> 
+    <%= link_to "Delete Post", post_path(@post.id), method: "delete" %> 
+  </p> 
+<% end %>
