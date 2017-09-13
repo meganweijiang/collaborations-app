@@ -1,8 +1,8 @@
 class ProfilesController < ApplicationController
   def show
-    begin
-      @profile ||= Profile.find(session[:user_id]) if session[:user_id]
-    rescue ActiveRecord::RecordNotFound => e
+    if Profile.where(:user_id => current_user.id).present?
+      @profile = Profile.find_by(user_id: current_user.id)   
+    else     
     	render 'new'
     end
   end

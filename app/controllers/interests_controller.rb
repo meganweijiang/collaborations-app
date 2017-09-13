@@ -11,4 +11,9 @@ class InterestsController < ApplicationController
 	  	redirect_to profile_path
 	  end
   end
+
+  def myinterests
+  	@interests = current_user.interests.all
+  end
+
 end

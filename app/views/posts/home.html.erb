@@ -1,6 +1,6 @@
 <div class="posts">
   <div class="container">
-    <li><%= link_to "New Post", "posts/new" %></li>
+    <h2><%= link_to "New Post", "posts/new" %></h2>
     <% @posts.each do |post|%> 
       <div class="post">
         <h2><%= link_to post.title, post_path(post) %></h2> 
