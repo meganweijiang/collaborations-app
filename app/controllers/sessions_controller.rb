@@ -9,6 +9,7 @@ class SessionsController < ApplicationController
       session[:user_id] = user.id
       redirect_to posts_url
     else
+      flash[:alert] = "Invalid login, please try again"
       redirect_to login_url
     end 
   end 

@@ -12,7 +12,7 @@
 					<p>Description: </p><%= post.description %><br>
 					<p>Looking for: </p><%= post.requirements %><br>
 					<%= link_to "Edit Post", edit_post_path(post.id) %> 
-					<%= link_to "Delete Post", post_path(post.id), method: "delete" %> 
+					<%= link_to "Delete Post", post_path(post.id), method: "delete", data: {confirm: "Are you sure you want to delete this post? You will no longer be able to see profiles shared with you through it."} %> 
 	      </div> 
 	    <% end %>
     <% end %>
