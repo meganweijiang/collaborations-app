@@ -1,15 +1,17 @@
 <div class="shared">
-	<% if @interests.empty? %>
-		<p>Looks like nobody has shared their profile with you!</p>
-	<% else %>
-	  <% @interests.each do |interest|%> 
-	  	<h2>Profile for post: <%= link_to interest.post.title, post_path(interest.post.id) %></h2>
-		<h2><%= interest.user.first_name %> <%= interest.user.last_name %></h2>
-		<h3><%= interest.user.email %></h3>
-		<p>Location: <%= interest.user.profile.location %></p>
-		<p>Skills: <%= interest.user.profile.skills %></p>
-		<p>Bio: <%= interest.user.profile.bio %></p>
-		<br>
-	  <% end %>
-	<% end %>
+	<div class="container">
+		<% if @interests.empty? %>
+			<p>Looks like nobody has shared their profile with you!</p>
+		<% else %>
+		  <% @interests.each do |interest|%> 
+		  	<h2>Profile for post: <%= link_to interest.post.title, post_path(interest.post.id) %></h2>
+			<h2><%= interest.user.first_name %> <%= interest.user.last_name %></h2>
+			<h3><%= interest.user.email %></h3>
+			<p>Location: <%= interest.user.profile.location %></p>
+			<p>Skills: <%= interest.user.profile.skills %></p>
+			<p>Bio: <%= interest.user.profile.bio %></p>
+			<br>
+		  <% end %>
+		<% end %>
+	</div>
 </div>

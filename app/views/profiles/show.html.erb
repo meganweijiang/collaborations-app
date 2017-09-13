@@ -1,6 +1,10 @@
-<h2><%= @profile.user.first_name %> <%= @profile.user.last_name %></h2>
-<p>Email: <%= @profile.user.email %></p>
-<p>Location: <%= @profile.location %></p>
-<p>Skills: <%= @profile.skills %></p>
-<p>Bio: <%= @profile.bio %></p>
-<%= link_to "Edit Profile", edit_profile_path(@profile) %>
+<div class="container">
+	<h2>My Profile</h2>
+	<br>
+	<h2><%= @profile.user.first_name %> <%= @profile.user.last_name %></h2>
+	<p>Email: <%= @profile.user.email %></p>
+	<p>Location: <%= @profile.location %></p>
+	<p>Skills: <%= @profile.skills %></p>
+	<p>Bio: <%= @profile.bio %></p>
+	<%= link_to "Edit Profile", edit_profile_path(@profile) %>
+</div>
