@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   patch 'profile' => 'profiles#update'
   post 'interest' => 'interests#create'
   get 'myinterests' => 'interests#myinterests'
+  delete 'interests' => 'interests#destroy'
 
   resources :users
   resources :posts

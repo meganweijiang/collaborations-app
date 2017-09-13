@@ -1,0 +1,19 @@
+<div class="interests">
+  <div class="container">
+  	<% if @interests.empty? %>
+  		<p>Looks like you haven't shared your profile with anyone!</p>
+  	<% else %>
+	    <% @interests.each do |interest|%> 
+	      <div class="interest">
+					<h2><%= interest.post.title %></h2> 
+					<h3><%= interest.post.category %></h3>
+					<h3>By <%= interest.post.user.first_name %> <%= interest.post.user.last_name %></h3>
+					<p>Location: </p><%= interest.post.location %><br>
+					<p>Description: </p><%= interest.post.description %><br>
+					<p>Looking for: </p><%= interest.post.requirements %><br>
+					<%= link_to "Stop Sharing", interests_path(id: interest.id), method: "delete" %> 
+	      </div> 
+	    <% end %>
+	  <% end %>
+  </div>
+</div>

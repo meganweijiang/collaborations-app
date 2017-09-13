@@ -12,6 +12,9 @@ class PostsController < ApplicationController
 
   def destroy
     @post = Post.find(params[:id])
+    if Interest.find_by(post_id: @post.id).present?
+      Interest.find_by(post_id: @post.id).destroy
+    end
     @post.destroy
     redirect_to posts_path
   end 
