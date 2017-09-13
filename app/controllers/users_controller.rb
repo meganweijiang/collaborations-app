@@ -13,10 +13,6 @@ class UsersController < ApplicationController
     end
   end 
 
-  def has_interest(post)
-    current_user.interests.find_by_post_id(post.id)
-  end
-
   private 
     def user_params
       params.require(:user).permit(:first_name, :last_name, :email, :password, :password_confirmation)
