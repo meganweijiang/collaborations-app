@@ -8,10 +8,11 @@
 					<h2><%= interest.post.title %></h2> 
 					<h3><%= interest.post.category %></h3>
 					<h3>By <%= interest.post.user.first_name %> <%= interest.post.user.last_name %></h3>
-					<p>Location: </p><%= interest.post.location %><br>
-					<p>Description: </p><%= interest.post.description %><br>
-					<p>Looking for: </p><%= interest.post.requirements %><br>
+					<p>Location: <%= interest.post.location %></p>
+					<p>Description: <%= interest.post.description %></p>
+					<p>Looking for: <%= interest.post.requirements %></p>
 					<%= link_to "Stop Sharing", interests_path(id: interest.id), method: "delete", data: {confirm: "Are you sure you want to stop sharing your profile for this post?"} %> 
+					<br>
 	      </div> 
 	    <% end %>
 	  <% end %>

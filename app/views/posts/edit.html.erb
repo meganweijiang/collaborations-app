@@ -2,11 +2,11 @@
   <div class="container">
     <%= form_for @post do |f| %>
       <div class="field"> 
-        <p>Title</p><%= f.text_field :title, :placeholder => 'Title'  %><br>
-        <p>Location</p><%= f.text_field :location, :placeholder => 'Location'  %><br>
-        <p>Description</p><%= f.text_area :description, :placeholder => 'Description'  %><br>
-        <p>Requirements</p><%= f.text_area :requirements, :placeholder => 'Requirements'  %><br>
-        <p>Category</p><%= f.select :category, [['Music', 'Music'], ['Art', 'Art'], ['Tech', 'Tech'], ['Education', 'Education'], ['Business', 'Business'], ['Services', 'Services'], ['Beauty/Fashion', 'Beauty/Fashion'], ['Other', 'Other']], :include_blank => true %>
+        <p>Title <%= f.text_field :title, :placeholder => 'Title' %></p>
+        <p>Location <%= f.text_field :location, :placeholder => 'Location' %></p>
+        <p>Description <%= f.text_area :description, :placeholder => 'Description' %></p>
+        <p>Requirements <%= f.text_area :requirements, :placeholder => 'Requirements' %></p>
+        <p>Category <%= f.select :category, [['Music', 'Music'], ['Art', 'Art'], ['Tech', 'Tech'], ['Education', 'Education'], ['Business', 'Business'], ['Services', 'Services'], ['Beauty/Fashion', 'Beauty/Fashion'], ['Other', 'Other']], :include_blank => true %></p>
       <div class="actions"> 
         <%= f.submit "Update", :class => "form-btn" %> 
       </div> 

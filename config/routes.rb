@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   post 'interest' => 'interests#create'
   get 'myinterests' => 'interests#myinterests'
   delete 'interests' => 'interests#destroy'
+  get 'sharedwithme' => 'posts#sharedwithme'
 
   resources :users
   resources :posts

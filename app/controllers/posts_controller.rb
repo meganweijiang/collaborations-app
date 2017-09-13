@@ -49,6 +49,11 @@ class PostsController < ApplicationController
   def myposts
     @posts = current_user.posts.all
   end
+
+  def sharedwithme
+    @posts = current_user.posts.all
+    @interests = Interest.where(post_id: @posts.ids)  
+  end
   
   private 
 	  def post_params 

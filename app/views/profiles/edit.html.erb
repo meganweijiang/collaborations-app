@@ -1,9 +1,9 @@
 <div class="edit_profile">
   <div class="container">
     <%= form_for @profile, url: '/profile' do |f| %>
-	  <p>Location</p><%= f.text_field :location, :placeholder => 'Location' %><br> 
-      <p>Skills</p><%= f.text_area :skills, :placeholder => 'Skills' %><br>
-      <p>Bio</p><%= f.text_area :bio, :placeholder => 'Bio' %><br> 
+	  <p>Location <%= f.text_field :location, :placeholder => 'Location' %></p>
+      <p>Skills <%= f.text_area :skills, :placeholder => 'Skills' %></p>
+      <p>Bio <%= f.text_area :bio, :placeholder => 'Bio' %></p>
       <%= f.submit "Update", :class => "form-btn" %>
     <% end %>
   </div>

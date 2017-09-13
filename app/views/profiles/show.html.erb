@@ -1,6 +1,6 @@
-<%= @profile.user.first_name %> <%= @profile.user.last_name %><br>
-<p>Email: </p><%= @profile.user.email %><br>
-<p>Location: </p><%= @profile.location %><br>
-<p>Skills: </p><%= @profile.skills %><br>
-<p>Bio: </p><%= @profile.bio %><br>
+<h2><%= @profile.user.first_name %> <%= @profile.user.last_name %></h2>
+<p>Email: <%= @profile.user.email %></p>
+<p>Location: <%= @profile.location %></p>
+<p>Skills: <%= @profile.skills %></p>
+<p>Bio: <%= @profile.bio %></p>
 <%= link_to "Edit Profile", edit_profile_path(@profile) %>
