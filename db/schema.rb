@@ -13,8 +13,12 @@
 ActiveRecord::Schema.define(version: 20170911211627) do
 
   create_table "interests", force: :cascade do |t|
+    t.integer "post_id"
+    t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["post_id"], name: "index_interests_on_post_id"
+    t.index ["user_id"], name: "index_interests_on_user_id"
   end
 
   create_table "posts", force: :cascade do |t|

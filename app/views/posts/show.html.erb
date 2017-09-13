@@ -13,3 +13,7 @@
     <%= link_to "Delete Post", post_path(@post.id), method: "delete" %> 
   </p> 
 <% end %>
+
+<% if current_user.id != @post.user.id %>
+  <%= button_to "Send Profile", interest_path(id: @post.id), remote: true  %>
+<% end %>

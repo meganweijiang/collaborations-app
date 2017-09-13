@@ -13,8 +13,11 @@ Rails.application.routes.draw do
   get 'profile/new' => 'profiles#new'
   post 'profile' => 'profiles#create'
   patch 'profile' => 'profiles#update'
+  get 'interest' => 'interests#new'
+  post 'interest' => 'interests#create'
 
   resources :users
   resources :posts
   resources :profiles
+  resources :interests
 end
