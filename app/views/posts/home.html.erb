@@ -1,6 +1,17 @@
 <div class="posts">
   <div class="container">
-    <h2 class="newpost"><%= link_to "New Post", "posts/new" %></h2>
+    <h2 class="newpost"><%= link_to "New Post", "posts/new" %> <i class="postsinfo fa fa-info-circle"></i></h2>
+    <div id="popup"><p>The posts are color coded by category</p>
+    <p id='Music'>Music</p>
+    <p id='Art'>Art</p>
+    <p id='Tech'>Tech</p>
+    <p id='Education'>Education</p>
+    <p id='Business'>Business</p>
+    <p id='Beauty'>Beauty</p>
+    <p id='Fashion'>Teal</p>
+    <p id='Services'>Gray</p>
+    <p id='Other'>Orange</p>
+    </div>
     <br>
     <% @posts.each do |post|%> 
       <div class="col-sm-3">

@@ -22,4 +22,10 @@ $(document).ready(function() {
     }, function() {
         $('#popup').hide();
     });
+
+    $('.postsinfo').hover(function() {
+        $('#popup').show();
+    }, function() {
+        $('#popup').hide();
+    });
 });

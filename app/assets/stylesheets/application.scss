@@ -125,7 +125,7 @@ li {
 }
 
 hr {
-  border-width: 5px;
+  border-width: 6px;
 }
 
 .profile {
@@ -134,30 +134,48 @@ hr {
 
 #Music {
   border-color: green;
+  background-color: green;
+  color: black;
 }
 #Art {
   border-color: blue;
+  background-color: blue;
+  color: black;
 }
 #Tech {
   border-color: red;
+  background-color: red;
+  color: black;
 }
 #Education {
   border-color: purple;
+  background-color: purple;
+  color: black;
 }
 #Business {
   border-color: yellow;
+  background-color: yellow;
+  color: black;
 }
 #Beauty {
   border-color: pink;
+  background-color: pink;
+  color: black;
 }
 #Fashion {
   border-color: teal;
+  background-color: teal;
+  color: black;
 }
 #Services {
   border-color: gray;
+  background-color: gray;
+  color: black;
 }
 #Other {
   border-color: orange;
+  background-color: orange;
+  color: black;
 }
 
 .blink_me {
@@ -177,6 +195,7 @@ hr {
     color: white;
     display: none;
     position: relative;
+    border-radius: 10px;
 }
 
 h2 {

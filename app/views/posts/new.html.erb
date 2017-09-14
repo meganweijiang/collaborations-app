@@ -1,6 +1,7 @@
 <div class="allheaders">
   <div class="container">
-    <h3>Create a new post</h3>
+    <h2>Create a new post</h2>
+    <h4>Try to be as detailed as possible!</h4>
     <%= form_for :post, url: '/posts' do |f| %>  
       <div class="field"> 
         <p>Title <%= f.text_field :title, :required => true, class: "text-field" %></p>
