@@ -1,13 +1,15 @@
 <div class="interests">
   <div class="container">
+  	<h2>My Interests</h2>
+  	<br>
   	<% if @interests.empty? %>
   		<p>Looks like you haven't shared your profile with anyone!</p>
   	<% else %>
 	    <% @interests.each do |interest|%> 
 	      <div class="interest">
-					<h2><%= interest.post.title %></h2> 
-					<h3><%= interest.post.category %></h3>
-					<h3>By <%= interest.post.user.first_name %> <%= interest.post.user.last_name %></h3>
+					<h3><%= interest.post.title %></h3> 
+					<h4><%= interest.post.category %></h4>
+					<h4>By <%= interest.post.user.first_name %> <%= interest.post.user.last_name %></h4>
 					<p>Location: <%= interest.post.location %></p>
 					<p>Description: <%= interest.post.description %></p>
 					<p>Looking for: <%= interest.post.requirements %></p>

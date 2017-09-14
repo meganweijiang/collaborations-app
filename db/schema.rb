@@ -15,6 +15,7 @@ ActiveRecord::Schema.define(version: 20170911211627) do
   create_table "interests", force: :cascade do |t|
     t.integer "post_id"
     t.integer "user_id"
+    t.boolean "seen", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["post_id"], name: "index_interests_on_post_id"

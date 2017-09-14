@@ -13,7 +13,10 @@ class PostsController < ApplicationController
   def destroy
     @post = Post.find(params[:id])
     if Interest.find_by(post_id: @post.id).present?
-      Interest.find_by(post_id: @post.id).destroy
+      @interests = Interest.where(post_id: @post.id).all
+      for interest in @interests do
+        interest.destroy
+      end
     end
     @post.destroy
     redirect_to posts_path
@@ -52,7 +55,11 @@ class PostsController < ApplicationController
 
   def sharedwithme
     @posts = current_user.posts.all
-    @interests = Interest.where(post_id: @posts.ids)  
+    @interests = Interest.where(post_id: @posts.ids).all  
+    for interest in @interests do
+      interest.update_attributes(:seen => true)
+      interest.save
+    end
   end
   
   private 
