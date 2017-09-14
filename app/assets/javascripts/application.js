@@ -11,8 +11,15 @@
 // about supported directives.
 //
 //= require rails-ujs
-//= require turbolinks
 //= require_tree .
 //= require bootstrap
 //= require jquery
 //= require bootstrap-sprockets
+
+$(document).ready(function() {
+    $('#myprofile').hover(function() {
+        $('#popup').show();
+    }, function() {
+        $('#popup').hide();
+    });
+});

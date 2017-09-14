@@ -1,10 +1,12 @@
 <div class="container">
-	<h2>My Profile</h2>
-	<br>
-	<h3><%= @profile.user.first_name %> <%= @profile.user.last_name %></h3>
-	<p>Email: <%= @profile.user.email %></p>
-	<p>Location: <%= @profile.location %></p>
-	<p>Skills: <%= @profile.skills %></p>
-	<p>Bio: <%= @profile.bio %></p>
-	<%= link_to "Edit Profile", edit_profile_path(@profile) %>
+	<div class="profile">
+		<div id="myprofile"><h2>My Profile <i class="fa fa-info-circle"></i></h2></div>
+		<div id="popup">This is what is displayed to users when you share your profile</div>
+		<h3><%= @profile.user.first_name %> <%= @profile.user.last_name %></h3>
+		<p>Email: <%= @profile.user.email %></p>
+		<p>Location: <%= @profile.location %></p>
+		<p>Skills: <%= @profile.skills %></p>
+		<p>Bio: <%= @profile.bio %></p>
+		<%= link_to "Edit Profile", edit_profile_path(@profile) %>
+	</div>
 </div>

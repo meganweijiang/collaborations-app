@@ -1,11 +1,11 @@
-<div class="edit_profile">
+<div class="allheaders">
   <div class="container">
   	<h2>Edit Profile</h2>
     <%= form_for @profile, url: '/profile' do |f| %>
 	  <p>Location <%= f.text_field :location, :placeholder => 'Location' %></p>
       <p>Skills <%= f.text_area :skills, :placeholder => 'Skills' %></p>
       <p>Bio <%= f.text_area :bio, :placeholder => 'Bio' %></p>
-      <%= f.submit "Update", :class => "form-btn" %>
+      <%= f.submit "Update", :class => "form-btn", class: "button" %>
     <% end %>
   </div>
 </div>

@@ -1,12 +1,12 @@
-<div class="new_profile">
+<div class="allheaders">
   <div class="container">
   	<h2>My Profile</h2>
   	<p>Looks like you don't have a profile! Please fill one out to get started.</p>
     <%= form_for :profile, url: '/profile' do |f| %>
-      <%= f.text_field :location, :placeholder => 'Location', :required => true %><br> 
-      <%= f.text_area :skills, :placeholder => 'Skills', :required => true %><br>
-      <%= f.text_area :bio, :placeholder => 'Bio', :required => true %><br> 
-      <%= f.submit "Save", :class => "form-btn" %>
+      <p>Location <%= f.text_field :location, :required => true, class: "text-field" %></p>
+      <p>Skills <%= f.text_area :skills, :required => true, class: "text-field" %></p>
+      <p>Bio <%= f.text_area :bio, :required => true, class: "text-field" %></p>
+      <%= f.submit "Save", :class => "form-btn", class: "button" %>
     <% end %>
   </div>
 </div>

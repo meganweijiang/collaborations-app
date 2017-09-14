@@ -15,45 +15,200 @@
  */
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "font-awesome-sprockets";
+@import "font-awesome";
+@import url('https://fonts.googleapis.com/css?family=Quicksand|Reenie+Beanie|Sirin+Stencil|Ubuntu');
+
+$nav-bar-color: #4c4c4c;
+$link-color: #78c0db;
 
 h1 {
-  font-size: 100px;
+	font-family: 'Reenie Beanie', cursive;
+}
+
+h2,h3,h4,p,li {
+	font-family: 'Quicksand', sans-serif;
+}
+
+.text-field {
+  margin: 5px;
+  border-radius: 5px;
+  color: $nav-bar-color;
+}
+
+.create {
   text-align: center;
+}
+
+.button {
+  border-radius: 5px;
+  background-color: $nav-bar-color;
+  color: white;
+  border-style: solid;
+  border-color: $link-color;
+}
+
+.navbar2 {
+  display: inline-block;
+  text-align: center;
+  font-weight: bold;
+  font-size: 20px;
+  width: 100%;
+}
+
+.navbar2 li {
+  background: white;
+  border: 3px solid white;
+  padding: 5px;	
+}
+
+.navbar2 li:hover {
+  border: 3px solid $link-color;
+}
+
+.home-header {
+  background-color: $link-color;
+  background-size: 100%;
+  border-radius: 5px;	
+  color: white;
+}
+
+.home-header a:hover {
+  transition: color 0.5s ease;
+  color: $nav-bar-color;
+}
+
+h1 {
+  font-size: 600%;
+  text-align: center;
+  .fa {
+	position: relative;
+  	color: $nav-bar-color;
+  	display: inline-block;  	
+  }
 }
 
 a:link {
   text-decoration: none;
+  color: $link-color;
+}
+
+a:visited {
+  color: $link-color;
 }
 
 h1 > a:hover {
   color: white;
 }
 
-h1 > a {
-  color: white;
+h1 > a, h1 > a:visited {
   display: inline-block;
-  width: 100%;
-  background-image: url("headerbackground.png");
-  background-size: 100%;
-  background-position: 0px 500px;
-  border-radius: 10px;
+  color: white;
 }
 
 li {
-  font-size: 30px;
   list-style-type: none;
-  display: inline;
-  margin: 20px;
+  display: inline-block;
+  margin: 0px 20px 0px 20px;
 }
 
 .navbar {
-  background-color: #4c4c4c;
-  border-radius: 90px;
+  background-color: $nav-bar-color;
+  border-radius: 5px;
   border-width: 0px;
   width: 100%;
   text-align: center;
 }
 
-.nav-item {
-  color: white;
+.navbar-inverse .navbar-nav > li > a {
+  color: $link-color;
+}
+
+hr {
+  border-width: 5px;
+}
+
+.profile {
+  text-align: center;
+}
+
+#Music {
+  border-color: green;
+}
+#Art {
+  border-color: blue;
+}
+#Tech {
+  border-color: red;
+}
+#Education {
+  border-color: purple;
+}
+#Business {
+  border-color: yellow;
+}
+#Beauty {
+  border-color: pink;
+}
+#Fashion {
+  border-color: teal;
+}
+#Services {
+  border-color: gray;
+}
+#Other {
+  border-color: orange;
+}
+
+.blink_me {
+  display: inline-block;
+  animation: blinker 1s linear infinite;
+  font-size: 20px;
+  margin: 10px 20px 0px 20px;
+}
+
+@keyframes blinker {  
+  50% { opacity: 0; }
+}
+
+#popup {
+    text-align: center;
+    background-color: $link-color;
+    color: white;
+    display: none;
+    position: relative;
+}
+
+h2 {
+	.fa {
+		display: inline-block;
+		font-size: 20px;
+	}
+}
+
+#footer {
+	text-align: center;
+	padding: 50px;
+}
+
+.hello {
+	font-size: 20px;
+	margin: 10px 20px 0px 20px;
+}
+
+.newpost {
+	text-align: center;
+}
+
+.newpost a:hover {
+	color: $nav-bar-color;
+}
+
+.allheaders {
+	text-align: center;
+	padding: 50px;
+}
+
+.mypost, .myshared, .interest {
+	text-align: left;
 }

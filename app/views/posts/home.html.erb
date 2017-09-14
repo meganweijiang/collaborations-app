@@ -1,12 +1,16 @@
 <div class="posts">
   <div class="container">
-    <h2><%= link_to "New Post", "posts/new" %></h2>
+    <h2 class="newpost"><%= link_to "New Post", "posts/new" %></h2>
     <br>
     <% @posts.each do |post|%> 
-      <div class="post">
-        <h3><%= link_to post.title, post_path(post) %></h3> 
-        <h4><%= post.location %></h4>
-        <br>
+      <div class="col-sm-3">
+        <div class="post">
+          <div class="post-title" >
+            <h3><%= link_to post.title, post_path(post) %></h3> 
+            <hr id='<%= post.category %>'>
+          </div>
+          <h4><%= post.location %></h4>
+        </div>
       </div> 
     <% end %>
   </div>

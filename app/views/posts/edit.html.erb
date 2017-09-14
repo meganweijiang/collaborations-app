@@ -1,4 +1,4 @@
-<div class="edit-post">
+<div class="allheaders">
   <div class="container">
     <h2>Edit Post</h2>
     <%= form_for @post do |f| %>
@@ -7,9 +7,9 @@
         <p>Location <%= f.text_field :location, :placeholder => 'Location' %></p>
         <p>Description <%= f.text_area :description, :placeholder => 'Description' %></p>
         <p>Requirements <%= f.text_area :requirements, :placeholder => 'Requirements' %></p>
-        <p>Category <%= f.select :category, [['Music', 'Music'], ['Art', 'Art'], ['Tech', 'Tech'], ['Education', 'Education'], ['Business', 'Business'], ['Services', 'Services'], ['Beauty/Fashion', 'Beauty/Fashion'], ['Other', 'Other']], :include_blank => true %></p>
+        <p>Category <%= f.select :category, [['Music', 'Music'], ['Art', 'Art'], ['Tech', 'Tech'], ['Education', 'Education'], ['Business', 'Business'], ['Services', 'Services'], ['Beauty', 'Beauty'], ['Fashion', 'Fashion'], ['Other', 'Other']], :include_blank => true %></p>
       <div class="actions"> 
-        <%= f.submit "Update", :class => "form-btn" %> 
+        <%= f.submit "Update", :class => "form-btn", class: "button" %> 
       </div> 
     <% end %>
   </div>

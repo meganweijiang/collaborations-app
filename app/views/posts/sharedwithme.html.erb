@@ -1,18 +1,21 @@
 <div class="shared">
 	<div class="container">
-		<h2>Profiles Received</h2>
-		<br>
-		<% if @interests.empty? %>
-			<p>Looks like nobody has shared their profile with you!</p>
+		<div class="allheaders">
+			<h2>Profiles Received</h2>
+			<br>
+			<% if @interests.empty? %>
+				<p>Looks like nobody has shared their profile with you!</p>
+		</div>
 		<% else %>
 		  <% @interests.each do |interest|%> 
+		  <div class="myshared col-sm-4">
 		  	<h3>Profile for post: <%= link_to interest.post.title, post_path(interest.post.id) %></h3>
 			<h3><%= interest.user.first_name %> <%= interest.user.last_name %></h3>
 			<h4><%= interest.user.email %></h4>
 			<p>Location: <%= interest.user.profile.location %></p>
 			<p>Skills: <%= interest.user.profile.skills %></p>
 			<p>Bio: <%= interest.user.profile.bio %></p>
-			<br>
+		  </div>
 		  <% end %>
 		<% end %>
 	</div>

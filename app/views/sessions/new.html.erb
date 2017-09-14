@@ -1,11 +1,12 @@
-<div class="login">
+<div class="allheaders">
   <div class="container">
   	<h2>Login with existing account</h2>
     <%= content_tag(:div, flash[:alert], :id => "flash_alert") if flash[:alert] %>
     <%= form_for(:session, url: login_path) do |f| %>
-      <%= f.email_field :email, :placeholder => 'Email', :required => true %>
-      <%= f.password_field :password, :placeholder => 'Password', :required => true %>
-      <%= f.submit "Login", :class => "form-btn" %>
+      <p>Email <%= f.email_field :email, :required => true, class: "text-field" %></p>
+      <p>Password <%= f.password_field :password, :required => true, class: "text-field" %></p>
+      <%= f.submit "Login", :class => "form-btn", class: "button" %>
     <% end %>
+    <h3>Don't have an account? Get one <%= link_to "here", signup_path %></h3>
   </div>
 </div>
