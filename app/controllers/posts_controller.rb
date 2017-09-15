@@ -3,7 +3,11 @@ class PostsController < ApplicationController
   before_action :require_user
 
   def home
-    @posts = Post.all
+    @posts = if params[:term]
+      Post.where('title LIKE ? or location LIKE ? or description LIKE ? or requirements LIKE ? or category LIKE ?', "%#{params[:term]}%", "%#{params[:term]}%", "%#{params[:term]}%", "%#{params[:term]}%", "%#{params[:term]}%").order('id DESC')
+    else
+      @posts = Post.all.order('id DESC')
+    end
   end
 
   def show
@@ -64,6 +68,6 @@ class PostsController < ApplicationController
   
   private 
 	  def post_params 
-      params.require(:post).permit(:title, :location, :description, :requirements, :category) 
+      params.require(:post).permit(:title, :location, :description, :requirements, :category, :term) 
     end
 end

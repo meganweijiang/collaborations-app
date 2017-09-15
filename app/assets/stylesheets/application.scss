@@ -122,6 +122,19 @@ li {
 
 .navbar-inverse .navbar-nav > li > a {
   color: $link-color;
+  margin: 0px;
+  border-bottom: 3px solid $nav-bar-color;
+  top: 7px;
+  line-height: 0px;
+  margin: 0px;
+
+}
+
+.navbar-inverse .navbar-nav > li > a:hover {
+  color: $link-color;
+  border-bottom: 3px solid white;
+  line-height: 0px;
+  margin: 0px;
 }
 
 hr {
@@ -133,49 +146,50 @@ hr {
 }
 
 #Music {
-  border-color: green;
-  background-color: green;
-  color: black;
+  border-color: #07ad14;
+  background-color: #07ad14;
+  color: white;
 }
 #Art {
-  border-color: blue;
-  background-color: blue;
-  color: black;
+  border-color: #072ead;
+  background-color: #072ead;
+  color: white;
 }
+
 #Tech {
-  border-color: red;
-  background-color: red;
-  color: black;
+  border-color: #ad0808;
+  background-color: #ad0808;
+  color: white;
 }
 #Education {
-  border-color: purple;
-  background-color: purple;
-  color: black;
+  border-color: #7007ad;
+  background-color: #7007ad;
+  color: white;
 }
 #Business {
-  border-color: yellow;
-  background-color: yellow;
-  color: black;
+  border-color: #edd100;
+  background-color: #edd100;
+  color: white;
 }
 #Beauty {
-  border-color: pink;
-  background-color: pink;
-  color: black;
+  border-color: #f29fc6;
+  background-color: #f29fc6;
+  color: white;
 }
 #Fashion {
-  border-color: teal;
-  background-color: teal;
-  color: black;
+  border-color: #07adad;
+  background-color: #07adad;
+  color: white;
 }
 #Services {
-  border-color: gray;
-  background-color: gray;
-  color: black;
+  border-color: #d3670e;
+  background-color: #d3670e;
+  color: white;
 }
 #Other {
-  border-color: orange;
-  background-color: orange;
-  color: black;
+  border-color: #7a7a7a;
+  background-color: #7a7a7a;
+  color: white;
 }
 
 .blink_me {
@@ -191,7 +205,7 @@ hr {
 
 #popup {
     text-align: center;
-    background-color: $link-color;
+    background-color: $nav-bar-color;
     color: white;
     display: none;
     position: relative;
@@ -230,4 +244,26 @@ h2 {
 
 .mypost, .myshared, .interest {
 	text-align: left;
+}
+
+.search {
+	float: right;
+}
+
+.carousel-caption {
+	right: 50px;
+	bottom: 50px;
+	text-align: right;
+	font-family: 'Ubuntu', sans-serif;
+	font-size: 50px;
+	position: absolute;
+}
+
+.item {
+	max-height: 600px;
+}
+
+.carousel-control > .fa {
+	position: absolute;
+	top: 50%;
 }

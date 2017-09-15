@@ -9,10 +9,17 @@
     <p id='Business'>Business</p>
     <p id='Beauty'>Beauty</p>
     <p id='Fashion'>Teal</p>
-    <p id='Services'>Gray</p>
-    <p id='Other'>Orange</p>
+    <p id='Services'>Services</p>
+    <p id='Other'>Other</p>
     </div>
-    <br>
+
+    <div class="search">
+      <%= form_tag(posts_path, method: :get) do %>
+        <%= text_field_tag :term, params[:term], class: "text-field" %>
+        <%= submit_tag 'Search', name: nil, class: "button" %>
+      <% end %>
+    </div>
+
     <% @posts.each do |post|%> 
       <div class="col-sm-3">
         <div class="post">
