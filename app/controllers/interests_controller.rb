@@ -12,6 +12,7 @@ class InterestsController < ApplicationController
         redirect_to post_path(@post.id)
       else
         render 'new'
+      end
   end
 
   def myinterests

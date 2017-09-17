@@ -12,6 +12,8 @@
 		  	<h3>Profile for post: <%= link_to interest.post.title, post_path(interest.post.id) %></h3>
 		  	<% if interest.user.profile.image? %>
       	  		<%= image_tag(interest.user.profile.image.smallthumb.url, alt: 'Image', :class => "profpic") %>
+      	  	<% else %>
+      	  		<%= image_tag("default.png", alt: 'NoImage', :class => "nopic")%>
       		<% end %>
 			<h3><%= interest.user.first_name %> <%= interest.user.last_name %></h3>
 			<h4><%= interest.user.email %></h4>

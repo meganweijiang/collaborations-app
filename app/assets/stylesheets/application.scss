@@ -291,3 +291,19 @@ h2 {
 .profpic {
   border-radius: 180px;
 }
+
+.imageupload {
+  display: inline-block;
+  position: relative;
+  left: 20%;
+}
+
+.imagecontainer {
+  display: inline-block;
+  position: relative;
+}
+
+.nopic {
+  height: 200px;
+  width: 200px;
+}

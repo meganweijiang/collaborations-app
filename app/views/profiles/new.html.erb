@@ -3,7 +3,7 @@
   	<h2>My Profile</h2>
   	<p>Looks like you don't have a profile! Please fill one out to get started.</p>
     <%= form_for :profile, url: profile_path do |f| %>
-      <p>Profile Picture <%= f.file_field :image %></p>
+      <div class="imagecontainer"><p>Profile Picture <%= f.file_field :image, class: "imageupload" %></p></div>
       <p>Location <%= f.text_field :location, value: @city, :required => true, class: "text-field" %></p>
       <p>Skills <%= f.text_area :skills, :required => true, class: "text-field" %></p>
       <p>Bio <%= f.text_area :bio, :required => true, class: "text-field" %></p>
