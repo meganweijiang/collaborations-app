@@ -2,10 +2,14 @@
   <div class="container">
   	<h2>Edit Profile</h2>
     <%= form_for @profile, url: profile_path do |f| %>
+      <% if @profile.image? %>
+      	<%= image_tag(@profile.image.thumb.url, alt: 'Image', :class => "profpic") %>
+      <% end %>
+   	  <p>Profile Picture <%= f.file_field :image %></p>
 	  <p>Location <%= f.text_field :location, :placeholder => 'Location' %></p>
       <p>Skills <%= f.text_area :skills, :placeholder => 'Skills' %></p>
       <p>Bio <%= f.text_area :bio, :placeholder => 'Bio' %></p>
-      <%= f.submit "Update", :class => "form-btn", class: "button" %>
+      <%= f.submit "Update", class: "button" %>
     <% end %>
   </div>
 </div>

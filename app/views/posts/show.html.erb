@@ -17,8 +17,12 @@
                    current_user.id, @post.id).present? %>
             <p id="sentprofile">You have already sent your profile</p>
           <% else %>
-		  	<%= button_to "Send Profile", interest_path(id: @post.id), remote: true, class: "button", id: "sendprofile"  %>
-		  	<p id="sent">Profile Sent!</p>
+          	<% if current_user.profile.present? %>
+		  		<%= button_to "Send Profile", interest_path(id: @post.id), remote: true, class: "button", id: "sendprofile"  %>
+		  		<p id="sent">Profile Sent!</p>
+		  	<% else %>
+		  		<%= button_to "Send Profile", profile_path(current_user.id), method: :get, class: "button", id: "sendprofile"  %>
+		  	<% end %>
 		  <% end %>
 		<% end %>
 	</div>

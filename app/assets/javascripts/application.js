@@ -30,6 +30,6 @@ $(document).ready(function() {
     });
 });
 
-$(document).on("click", "#sendprofile",function() {
+$(document).on("click", "#sendprofile", function() {
    $("#sent").show();
 });

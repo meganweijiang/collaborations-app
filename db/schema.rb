@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(version: 20170911211627) do
 
   create_table "profiles", force: :cascade do |t|
     t.integer "user_id"
+    t.string "image"
     t.string "location"
     t.string "skills"
     t.string "bio"
