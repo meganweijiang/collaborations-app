@@ -7,6 +7,7 @@ class InterestsController < ApplicationController
 	  	@interest.user_id = @user.id
 	  	@interest.post_id = @post.id
 	  	@interest.save!
+      redirect_to post_path(@post.id)
 	  else
 	  	redirect_to profile_path
 	  end

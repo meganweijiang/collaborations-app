@@ -40,7 +40,11 @@ class PostsController < ApplicationController
   end
 
   def new 
- 	  @post = Post.new 
+    if Profile.where(:user_id => current_user.id).present?
+      @post = Post.new 
+    else 
+      redirect_to profile_path
+    end
   end
   
   def create 

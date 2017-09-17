@@ -5,7 +5,7 @@
     <%= form_for :post, url: '/posts' do |f| %>  
       <div class="field"> 
         <p>Title <%= f.text_field :title, :required => true, class: "text-field" %></p>
-        <p>Location <%= f.text_field :location, :required => true, class: "text-field" %></p>
+        <p>Location <%= f.text_field :location, :value => current_user.profile.location, :required => true, class: "text-field" %></p>
         <p>Description <%= f.text_area :description, :required => true, class: "text-field" %></p>
         <p>Requirements <%= f.text_area :requirements, :required => true, class: "text-field" %></p>
         <p>Category <%= f.select :category, [['Music', 'Music'], ['Art', 'Art'], ['Tech', 'Tech'], ['Education', 'Education'], ['Business', 'Business'], ['Services', 'Services'], ['Beauty', 'Beauty'], ['Fashion', 'Fashion'], ['Other', 'Other']], :include_blank => true, :required => true, class: "text-field" %></p>

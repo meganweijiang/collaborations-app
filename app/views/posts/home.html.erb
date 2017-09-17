@@ -1,16 +1,17 @@
 <div class="posts">
   <div class="container">
-    <h2 class="newpost"><%= link_to "New Post", "posts/new" %> <i class="postsinfo fa fa-info-circle"></i></h2>
-    <div id="popup"><p>The posts are color coded by category</p>
-    <p id='Music'>Music</p>
-    <p id='Art'>Art</p>
-    <p id='Tech'>Tech</p>
-    <p id='Education'>Education</p>
-    <p id='Business'>Business</p>
-    <p id='Beauty'>Beauty</p>
-    <p id='Fashion'>Teal</p>
-    <p id='Services'>Services</p>
-    <p id='Other'>Other</p>
+    <h2 class="newpost"><%= link_to "New Post", new_post_path %> <i class="postsinfo fa fa-info-circle"></i></h2>
+    <div id="popup">
+      <p>The posts are color coded by category</p>
+      <p id='Music'>Music</p>
+      <p id='Art'>Art</p>
+      <p id='Tech'>Tech</p>
+      <p id='Education'>Education</p>
+      <p id='Business'>Business</p>
+      <p id='Beauty'>Beauty</p>
+      <p id='Fashion'>Teal</p>
+      <p id='Services'>Services</p>
+      <p id='Other'>Other</p>
     </div>
 
     <div class="search">
@@ -20,16 +21,22 @@
       <% end %>
     </div>
 
-    <% @posts.each do |post|%> 
-      <div class="col-sm-3">
-        <div class="post">
-          <div class="post-title" >
-            <h3><%= link_to post.title, post_path(post) %></h3> 
-            <hr id='<%= post.category %>'>
+    <div class="postcontainer">
+      <% if @posts.empty? %>
+        <p class="allheaders">There are no posts to show. Why don't you make one?</p>
+      <% end %>
+      <% @posts.each do |post|%> 
+        <div class="col-sm-3">
+          <div class="post">
+            <div class="post-title" >
+              <h3><%= link_to post.title, post_path(post) %></h3> 
+              <hr id='<%= post.category %>'>
+            </div>
+            <h4><%= post.location %></h4>
           </div>
-          <h4><%= post.location %></h4>
-        </div>
-      </div> 
-    <% end %>
+        </div> 
+      <% end %>
+    </div>
+
   </div>
 </div>

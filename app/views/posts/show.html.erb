@@ -8,12 +8,18 @@
 		<p>Looking for: <%= @post.requirements %></p>
 
 		<% if current_user.id == @post.user.id %> 
-			<%= link_to "Edit Post", edit_post_path(@post.id) %> 
+			<%= link_to "Edit Post", edit_post_path(@post.id) %> | 
 			<%= link_to "Delete Post", post_path(@post.id), method: "delete", data: {confirm: "Are you sure you want to delete this post? You will no longer be able to see profiles shared with you through it."} %>  
 		<% end %>
 
 		<% if current_user.id != @post.user.id %>
-		  <%= button_to "Send Profile", interest_path(id: @post.id), remote: true, class: "button"  %>
+		  <% if Interest.where("user_id = ? and post_id = ?",
+                   current_user.id, @post.id).present? %>
+            <p id="sentprofile">You have already sent your profile</p>
+          <% else %>
+		  	<%= button_to "Send Profile", interest_path(id: @post.id), remote: true, class: "button", id: "sendprofile"  %>
+		  	<p id="sent">Profile Sent!</p>
+		  <% end %>
 		<% end %>
 	</div>
 </div>

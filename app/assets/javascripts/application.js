@@ -29,3 +29,7 @@ $(document).ready(function() {
         $('#popup').hide();
     });
 });
+
+$(document).on("click", "#sendprofile",function() {
+   $("#sent").show();
+});
