@@ -1,7 +1,7 @@
 <div class="allheaders">
   <div class="container">
   	<h2>Edit Profile</h2>
-    <%= form_for @profile, url: '/profile' do |f| %>
+    <%= form_for @profile, url: profile_path do |f| %>
 	  <p>Location <%= f.text_field :location, :placeholder => 'Location' %></p>
       <p>Skills <%= f.text_area :skills, :placeholder => 'Skills' %></p>
       <p>Bio <%= f.text_area :bio, :placeholder => 'Bio' %></p>
