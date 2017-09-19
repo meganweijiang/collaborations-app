@@ -16,13 +16,20 @@ class ImageUploader < CarrierWave::Uploader::Base
   end
 
   version :thumb do
-      process resize_to_fill: [350, 350]
+    process resize_to_fill: [350, 350]
   end
 
   version :smallthumb do
-      process resize_to_fill: [200, 200]
+    process resize_to_fill: [200, 200]
   end
 
+  def extension_whitelist
+    %w(jpg jpeg gif png)
+  end
+
+  def content_type_whitelist
+    /image\//
+  end
   # Provide a default URL as a default if there hasn't been a file uploaded:
   # def default_url(*args)
   #   # For Rails 3.1+ asset pipeline compatibility:

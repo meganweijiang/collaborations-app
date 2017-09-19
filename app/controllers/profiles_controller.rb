@@ -1,5 +1,7 @@
 class ProfilesController < ApplicationController
 
+  before_action :require_user
+
   def show
     @city = request.location.city
     if Profile.where(:user_id => current_user.id).present?

@@ -17,19 +17,19 @@
 //= require bootstrap-sprockets
 
 $(document).ready(function() {
-    $('#myprofile').hover(function() {
-        $('#popup').show();
-    }, function() {
-        $('#popup').hide();
-    });
+  $('#myprofile').hover(function() {
+    $('#popup').show();
+  }, function() {
+    $('#popup').hide();
+  });
 
-    $('.postsinfo').hover(function() {
-        $('#popup').show();
-    }, function() {
-        $('#popup').hide();
-    });
+  $('.postsinfo').hover(function() {
+    $('#popup').show();
+  }, function() {
+    $('#popup').hide();
+  });
 });
 
 $(document).on("click", "#sendprofile", function() {
-   $("#sent").show();
+  $("#sent").show();
 });
