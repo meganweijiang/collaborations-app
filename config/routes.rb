@@ -19,8 +19,5 @@ Rails.application.routes.draw do
   delete 'interests' => 'interests#destroy'
   get 'sharedwithme' => 'posts#sharedwithme'
 
-  resources :users
-  resources :posts
-  resources :profiles
-  resources :interests
+  resources :users, :posts, :profiles, :interests
 end
