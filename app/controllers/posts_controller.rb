@@ -26,6 +26,12 @@ class PostsController < ApplicationController
     redirect_to posts_path
   end 
 
+  def decline
+    @interest = Interest.find(params[:id])
+    @interest.destroy
+    redirect_to sharedwithme_path
+  end 
+
   def edit
     @post = Post.find(params[:id])
   end
@@ -65,6 +71,7 @@ class PostsController < ApplicationController
     @posts = current_user.posts.all
     @interests = Interest.where(post_id: @posts.ids).all  
     for interest in @interests do
+      puts interest.id
       interest.update_attributes(:seen => true)
       interest.save
     end

@@ -20,6 +20,7 @@
 			<p>Location: <%= interest.user.profile.location %></p>
 			<p>Skills: <%= interest.user.profile.skills %></p>
 			<p>Bio: <%= interest.user.profile.bio %></p>
+			<h4><%= link_to "Decline Profile", sharedwithme_path(id: interest.id), method: "delete", data: {confirm: "Are you sure you want to decline this profile? You will no longer be able to see this profile for this post."} %></h4>
 		  </div>
 		  <% end %>
 		<% end %>
