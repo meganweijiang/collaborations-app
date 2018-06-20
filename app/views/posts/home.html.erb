@@ -1,18 +1,18 @@
 <div class="posts">
   <div class="container">
-    <h2 class="newpost"><%= link_to "New Post", new_post_path %> <i class="postsinfo fa fa-info-circle"></i></h2>
-    <div id="popup">
-      <p>The posts are color coded by category</p>
-      <p id='Music'>Music</p>
-      <p id='Art'>Art</p>
-      <p id='Tech'>Tech</p>
-      <p id='Education'>Education</p>
-      <p id='Business'>Business</p>
-      <p id='Beauty'>Beauty</p>
-      <p id='Fashion'>Teal</p>
-      <p id='Services'>Services</p>
-      <p id='Other'>Other</p>
-    </div>
+    <h2 class="newpost"><%= link_to "New Post", new_post_path %>
+      <a id="tooltip" data-toggle="tooltip" data-original-title="<p>The posts are color coded by category</p>
+            <p id='Music'>Music</p>
+            <p id='Art'>Art</p>
+            <p id='Tech'>Tech</p>
+            <p id='Education'>Education</p>
+            <p id='Business'>Business</p>
+            <p id='Beauty'>Beauty</p>
+            <p id='Fashion'>Teal</p>
+            <p id='Services'>Services</p>
+            <p id='Other'>Other</p>"><i class="fa fa-info-circle"></i>
+      </a>
+    </h2>
 
     <div class="search">
       <%= form_tag(posts_path, method: :get) do %>

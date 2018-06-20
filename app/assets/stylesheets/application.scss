@@ -206,13 +206,8 @@ hr {
   50% { opacity: 0; }
 }
 
-#popup {
-  text-align: center;
-  background-color: $nav-bar-color;
-  color: white;
-  display: none;
-  position: relative;
-  border-radius: 10px;
+#tooltip {
+  color: $nav-bar-color;
 }
 
 h2 {

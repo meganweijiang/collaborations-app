@@ -1,7 +1,10 @@
 <div class="container">
 	<div class="profile">
-		<h2>My Profile <i id="myprofile" class="fa fa-info-circle"></i></h2>
-		<div id="popup"><p>This is what is displayed to users when you share your profile</p></div>
+		<h2>My Profile
+			<a id="tooltip" data-toggle="tooltip" data-original-title="<p>This is what is displayed to users when you share your profile</p>">
+            	<i class="fa fa-info-circle"></i>
+        	</a>
+        </h2>
 		<% if @profile.image? %>
       	  <%= image_tag(@profile.image.thumb.url, alt: 'Image', :class => "profpic") %>
       	<% end %>

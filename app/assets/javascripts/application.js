@@ -16,18 +16,8 @@
 //= require jquery
 //= require bootstrap-sprockets
 
-$(document).ready(function() {
-  $('#myprofile').hover(function() {
-    $('#popup').show();
-  }, function() {
-    $('#popup').hide();
-  });
-
-  $('.postsinfo').hover(function() {
-    $('#popup').show();
-  }, function() {
-    $('#popup').hide();
-  });
+$(document).ready(function(){
+  $('[data-toggle="tooltip"]').tooltip({html:true}); 
 });
 
 $(document).on("click", "#sendprofile", function() {
